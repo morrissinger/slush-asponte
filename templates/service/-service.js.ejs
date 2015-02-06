@@ -1,0 +1,24 @@
+/**
+ * <%= serviceNameVar %> Service.
+ */
+(function () {
+
+	class Service {
+
+		constructor(<%= injections.formatted %>) {}
+
+		 */<% if (methods.list.length > 0) { %>
+		<% _.each(methods.list, function (method) { %>
+		/**
+		 * <%= method %> method.
+		 */
+		<%= method %>() {
+		}
+		<% }) %> <% } %>
+
+	}
+
+	angular.module('<%= moduleNameVar%>')
+		.service('<%= serviceNameVar %>', Service);
+
+})();

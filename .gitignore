@@ -1,0 +1,12 @@
+# Common
+##########
+build/
+**/.idea
+**/node_modules
+**/.sass-cache
+**/bower_components
+**/npm-debug.log
+**/tmp
+**/.vagrant
+**/.DS_Store
+**/machines

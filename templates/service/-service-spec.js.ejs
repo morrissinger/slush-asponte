@@ -1,0 +1,45 @@
+describe('<%= moduleNameVar %> module', () => {
+
+	/**
+	 * Add any additional variables you want to declare on the top scope for this test suite.
+	 */
+	var <%= serviceNameVar %>, $httpBackend<% if (injections.list.length > 0) {%>, <%= injections.formatted %><% } %>;
+
+	beforeEach((done) => {
+
+		/**
+		 * Add any additional test initialization routines to run before each test, including any additional dependency injections.
+		 */
+		module('<%= moduleNameVar %>');
+		inject((_$httpBackend_, _<%= serviceNameVar %>_<% if (injections.list.length > 0) {%>, <%= injections.underscored %><% } %>) => {
+			$httpBackend = _$httpBackend_;
+			<%= serviceNameVar %> = _<%= serviceNameVar %>_;<% if (injections.list.length > 0) {%>
+<%= injections.injectorMap %><% } %>
+			trainHttpBackend($httpBackend);
+			done();
+		});
+	});
+
+	afterEach(() => {
+		/**
+		 * Add any additional test cleanup routines to run after each test.
+		 */
+		$httpBackend.verifyNoOutstandingExpectation();
+		$httpBackend.verifyNoOutstandingRequest();
+	});
+
+	describe('<%= serviceNameVar %> service', () => {
+
+		<% if (methods.list.length > 0) { %>
+		<% _.each(methods.list, function (method) { %>
+		describe('<%= method %> method', () => {
+			it('exists', (done) => {
+				expect(<%= serviceNameVar %>.<%= method %>).to.exist;
+				done();
+			});
+		});
+		<% }) %> <% } %>
+
+	});
+
+});
