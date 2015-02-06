@@ -1,4 +1,4 @@
-# asponte [![Build Status](https://secure.travis-ci.org/morrissinger/slush-asponte.png?branch=master)](https://travis-ci.org/morrissinger/slush-asponte) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-asponte.png)](http://badges.enytc.com/for/npm/slush-asponte)
+# Asponte [![Build Status](https://secure.travis-ci.org/morrissinger/slush-asponte.png?branch=master)](https://travis-ci.org/morrissinger/slush-asponte) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-asponte.png)](http://badges.enytc.com/for/npm/slush-asponte)
 
 > A slush generator to scaffold an ECMAScript6-based front-end with a solid developer toolkit and build processes.
 
@@ -24,6 +24,13 @@ Run the generator from within the new folder:
 ```bash
 $ cd my-slush-asponte && slush asponte
 ```
+
+### Generators
+Asponte includes several generators to help you build your project:
+  * **asponte:** Builds a starter application with AngularJS featuring a number of advantageous features that can be a pain to set up, including build processes in Gulp, ECMAScript transpiling via 6to5, the Karma test runner with Mocha (including full support for ECMAScript 6 sourcemaps), code coverage with Istanbul (also featuring full ECMAScript 6 sourcemap support), SASS with Bourbon, and more.
+  * **module**
+  * **service**
+  * **controller**
 
 ## Getting To Know Slush
 
