@@ -18,6 +18,12 @@ Additionally, there are a some optional components you may choose to deploy:
   * Bootstrap (with SASS and LESS)
   * Bourbon
 
+This generator is both opinionated and non-opinionated. It is built with certain assumptions about the best way to
+organize one's Angular.js project. There will naturally be disagreement about this. The good news is that Slush
+allows one to use only the generators she pleases. So, if you do not like the app organization, but like the
+code generation utilities for modules and their components, for example, you can use only those portions
+of this project.
+
 ## Getting Started
 
 Install `slush-asponte` globally:
@@ -31,13 +37,13 @@ $ npm install -g slush-asponte
 Create a new folder for your project:
 
 ```bash
-$ mkdir my-slush-asponte
+$ mkdir my-slush-asponte-project
 ```
 
 Run the generator from within the new folder:
 
 ```bash
-$ cd my-slush-asponte && slush asponte
+$ cd my-slush-asponte-project && slush asponte
 ```
 
 ### Project Layout
@@ -75,26 +81,60 @@ Projects built with Asponte are highly organized, as follows:
 
 ### Generators
 Asponte includes several generators to help you build your project:
-<dl>
-	<dt>**asponte:** Builds a starter application with AngularJS featuring a number of advantageous features that can be a pain to set up.</dt>
-	<dd>Adds *src* directory, basis Gulp tasks in the *tasks* directory, basic test configuration in the *test* directory.</dd>
+#### asponte
+> Builds a starter application with AngularJS featuring a number of advantageous features that can be a pain to set up.
 
-	<dt>**module:** Creates a new module in src/modules and creates a -module.js file to declare the Angular module.</dt>
-	<dd>Adds [module-name] directory under src/modules, and adds [module-name]-module.js in that directory.</dd>
+This generator adds *src* directory, basis Gulp tasks in the *tasks* directory, basic test configuration in the *test* directory.
+To use, run:
 
-	<dt>**service** Creates a new Angular service in the module of your choice, and sets up some scaffolding for the service and for tests.</dt>
-	<dd>Adds [service-name]-service.js and [service-name]-service-spec.js under src/modules/[module-name]/services.</dd>
+```bash
+slush asponte
+```
 
-	<dt>**factory** Creates a new Angular factory in the module of your choice, and sets up some scaffolding for the factory and for tests.</dt>
-	<dd>Adds [factory-name]-factory.js and [factory-name]-factory-spec.js under src/modules/[module-name]/factories.</dd>
+#### module
+> Creates a new module in src/modules and creates a -module.js file to declare the Angular module.
 
-	<dt>**controller** Creates a new Angular controller in the module of your choice, and sets up some scaffolding for the controller and for tests.</dt>
-	<dd>Adds [controller-name]-controller.js and [controller-name]-controller-spec.js under src/modules/[module-name]/controllers.</dd>
+This generator adds [module-name] directory under src/modules, and adds [module-name]-module.js in that directory. To use, run:
 
-	<dt>**template** Creates a new Angular template HTML file in the module of your choice, along with a file for SCSS styles.</dt>
-	<dd>Adds [template-name]-template.html under src/modules/[module-name]/templates and [template-name]-styles.scss under src/modules/[module-name]/scss.</dd>
-</dl>
+```bash
+slush asponte:module
+```
 
+#### service
+> Creates a new Angular service in the module of your choice, and sets up some scaffolding for the service and for tests.
+
+This generator adds [service-name]-service.js and [service-name]-service-spec.js under src/modules/[module-name]/services. To use, run:
+
+```bash
+slush asponte:service
+```
+
+#### factory
+> Creates a new Angular factory in the module of your choice, and sets up some scaffolding for the factory and for tests.
+
+This generator adds [factory-name]-factory.js and [factory-name]-factory-spec.js under src/modules/[module-name]/factories. To use, run:
+
+```bash
+slush asponte:factory
+```
+
+#### controller
+> Creates a new Angular controller in the module of your choice, and sets up some scaffolding for the controller and for tests.
+
+This generator adds [controller-name]-controller.js and [controller-name]-controller-spec.js under src/modules/[module-name]/controllers. To use, run:
+
+```bash
+slush asponte:controller
+```
+
+#### template
+> Creates a new Angular template HTML file in the module of your choice, along with a file for SCSS styles.
+
+This generator adds [template-name]-template.html under src/modules/[module-name]/templates and [template-name]-styles.scss under src/modules/[module-name]/scss. To use, run:
+
+```bash
+slush asponte:template
+```
 
 ## Getting To Know Slush
 
