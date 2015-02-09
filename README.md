@@ -75,13 +75,25 @@ Projects built with Asponte are highly organized, as follows:
 
 ### Generators
 Asponte includes several generators to help you build your project:
-  * **asponte:** Builds a starter application with AngularJS featuring a number of advantageous features that can be a pain to set up.
-  * **module:** Creates a new module in src/modules and creates a -module.js file to declare the Angular module.
-  * **service** Creates a new Angular service in the module of your choice, and sets up some scaffolding for the service and for tests.
-  * **factory** Creates a new Angular factory in the module of your choice, and sets up some scaffolding for the factory and for tests.
-  * **controller** Creates a new Angular controller in the module of your choice, and sets up some scaffolding for the controller and for tests.
-  * **template** Creates a new Angular template HTML file in the module of your choice, along with a file for SCSS styles.
+<dl>
+	<dt>**asponte:** Builds a starter application with AngularJS featuring a number of advantageous features that can be a pain to set up.</dt>
+	<dd>Adds *src* directory, basis Gulp tasks in the *tasks* directory, basic test configuration in the *test* directory.</dd>
 
+	<dt>**module:** Creates a new module in src/modules and creates a -module.js file to declare the Angular module.</dt>
+	<dd>Adds [module-name] directory under src/modules, and adds [module-name]-module.js in that directory.</dd>
+
+	<dt>**service** Creates a new Angular service in the module of your choice, and sets up some scaffolding for the service and for tests.</dt>
+	<dd>Adds [service-name]-service.js and [service-name]-service-spec.js under src/modules/[module-name]/services.</dd>
+
+	<dt>**factory** Creates a new Angular factory in the module of your choice, and sets up some scaffolding for the factory and for tests.</dt>
+	<dd>Adds [factory-name]-factory.js and [factory-name]-factory-spec.js under src/modules/[module-name]/factories.</dd>
+
+	<dt>**controller** Creates a new Angular controller in the module of your choice, and sets up some scaffolding for the controller and for tests.</dt>
+	<dd>Adds [controller-name]-controller.js and [controller-name]-controller-spec.js under src/modules/[module-name]/controllers.</dd>
+
+	<dt>**template** Creates a new Angular template HTML file in the module of your choice, along with a file for SCSS styles.</dt>
+	<dd>Adds [template-name]-template.html under src/modules/[module-name]/templates and [template-name]-styles.scss under src/modules/[module-name]/scss.</dd>
+</dl>
 
 
 ## Getting To Know Slush
