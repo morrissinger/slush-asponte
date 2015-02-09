@@ -78,7 +78,9 @@ Asponte includes several generators to help you build your project:
   * **asponte:** Builds a starter application with AngularJS featuring a number of advantageous features that can be a pain to set up.
   * **module:** Creates a new module in src/modules and creates a -module.js file to declare the Angular module.
   * **service** Creates a new Angular service in the module of your choice, and sets up some scaffolding for the service and for tests.
+  * **factory** Creates a new Angular factory in the module of your choice, and sets up some scaffolding for the factory and for tests.
   * **controller** Creates a new Angular controller in the module of your choice, and sets up some scaffolding for the controller and for tests.
+  * **template** Creates a new Angular template HTML file in the module of your choice, along with a file for SCSS styles.
 
 
 

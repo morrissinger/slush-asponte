@@ -25,30 +25,22 @@ module.exports = function (gulp) {
 		};
 	})();
 
-	gulp.task('service', function (done) {
+	gulp.task('template', function (done) {
 
 		if (defaults.modules.length === 0) {
-			throw new Error('Service must be created in a module, but no modules exist. Create a module first.');
+			throw new Error('Template must be created in a module, but no modules exist. Create a module first.');
 		}
 
 		var prompts = [
 			{
-				name: 'serviceName',
-				message: 'What is the name of the service you want to create?'
+				name: 'templateName',
+				message: 'What is the name of the template you want to create?'
 			},
 			{
 				name: 'moduleName',
 				type: 'list',
 				choices: defaults.modules,
 				message: 'What is the name of the module to which you want to add the service?'
-			},
-			{
-				name: 'injectionsRaw',
-				message: 'What are the service\'s dependencies? (Enter as comma-separated values)'
-			},
-			{
-				name: 'methodsRaw',
-				message: 'What methods should be on the service? (Enter a comma-separated list)'
 			},
 
 			{
@@ -68,17 +60,14 @@ module.exports = function (gulp) {
 				answers.moduleNameSlug = _.slugify(answers.moduleName);
 				answers.moduleNameVar = _.camelize(answers.moduleNameSlug);
 
-				answers.serviceNameSlug = _.slugify(answers.serviceName);
-				answers.serviceNameVar = _.camelize(answers.serviceNameSlug)+'Service';
+				answers.templateNameSlug = _.slugify(answers.templateName);
+				answers.templateNameVar = _.camelize(answers.templateNameSlug)+'Template';
 
-				answers.injections = formatters.dependencyInjections(answers.injectionsRaw);
-				answers.methods = formatters.methods(answers.methodsRaw);
-
-				gulp.src([__dirname + '/../templates/service/**/*.ejs'])
+				gulp.src([__dirname + '/../templates/template/**/*.ejs'])
 					.pipe(template(answers))
-					.pipe(rename(utils.templateRenamer(answers.serviceNameSlug)))
+					.pipe(rename(utils.templateRenamer(answers.templateNameSlug)))
 					.pipe(conflict('./'))
-					.pipe(gulp.dest('./src/modules/' + answers.moduleNameSlug + '/services'))
+					.pipe(gulp.dest('./src/modules/' + answers.moduleNameSlug))
 					.on('end', function () {
 						done();
 					});

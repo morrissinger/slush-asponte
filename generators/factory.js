@@ -25,30 +25,30 @@ module.exports = function (gulp) {
 		};
 	})();
 
-	gulp.task('service', function (done) {
+	gulp.task('factory', function (done) {
 
 		if (defaults.modules.length === 0) {
-			throw new Error('Service must be created in a module, but no modules exist. Create a module first.');
+			throw new Error('Factory must be created in a module, but no modules exist. Create a module first.');
 		}
 
 		var prompts = [
 			{
-				name: 'serviceName',
-				message: 'What is the name of the service you want to create?'
+				name: 'factoryName',
+				message: 'What is the name of the factory you want to create?'
 			},
 			{
 				name: 'moduleName',
 				type: 'list',
 				choices: defaults.modules,
-				message: 'What is the name of the module to which you want to add the service?'
+				message: 'What is the name of the module to which you want to add the factory?'
 			},
 			{
 				name: 'injectionsRaw',
-				message: 'What are the service\'s dependencies? (Enter as comma-separated values)'
+				message: 'What are the factory\'s dependencies? (Enter as comma-separated values)'
 			},
 			{
 				name: 'methodsRaw',
-				message: 'What methods should be on the service? (Enter a comma-separated list)'
+				message: 'What methods should be on the factory? (Enter a comma-separated list)'
 			},
 
 			{
@@ -68,17 +68,17 @@ module.exports = function (gulp) {
 				answers.moduleNameSlug = _.slugify(answers.moduleName);
 				answers.moduleNameVar = _.camelize(answers.moduleNameSlug);
 
-				answers.serviceNameSlug = _.slugify(answers.serviceName);
-				answers.serviceNameVar = _.camelize(answers.serviceNameSlug)+'Service';
+				answers.factoryNameSlug = _.slugify(answers.factoryName);
+				answers.factoryNameVar = _.camelize(answers.factoryNameSlug)+'Factory';
 
 				answers.injections = formatters.dependencyInjections(answers.injectionsRaw);
 				answers.methods = formatters.methods(answers.methodsRaw);
 
-				gulp.src([__dirname + '/../templates/service/**/*.ejs'])
+				gulp.src([__dirname + '/../templates/factory/**/*.ejs'])
 					.pipe(template(answers))
-					.pipe(rename(utils.templateRenamer(answers.serviceNameSlug)))
+					.pipe(rename(utils.templateRenamer(answers.factoryNameSlug)))
 					.pipe(conflict('./'))
-					.pipe(gulp.dest('./src/modules/' + answers.moduleNameSlug + '/services'))
+					.pipe(gulp.dest('./src/modules/' + answers.moduleNameSlug + '/factories'))
 					.on('end', function () {
 						done();
 					});

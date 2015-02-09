@@ -1,0 +1,24 @@
+/**
+ * <%= factoryName %> Factory.
+ */
+(function () {
+
+	let Factory = (<%= injections.formatted %>) => {
+
+		var service = {};
+		<% if (methods.list.length > 0) { %>
+		<% _.each(methods.list, function (method) { %>/**
+		* <%= method %> method.
+		*/
+		service.<%= method %> = () => {
+		};
+
+		<% }) %> <% } %>
+		return service;
+
+	};
+
+	angular.module('<%= moduleNameVar%>')
+		.factory('<%= factoryNameVar %>', Factory);
+
+})();

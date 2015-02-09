@@ -5,9 +5,7 @@
 
 	class Controller {
 
-		constructor(<%= injections.formatted %>) {}
-
-		 */<% if (methods.list.length > 0) { %>
+		constructor(<%= injections.formatted %>) {}<% if (methods.list.length > 0) { %>
 		<% _.each(methods.list, function (method) { %>
 		/**
 		 * <%= method %> method.
@@ -15,7 +13,6 @@
 		<%= method %>() {
 		}
 		<% }) %> <% } %>
-
 	}
 
 	angular.module('<%= moduleNameVar%>')
