@@ -2,6 +2,21 @@
 
 > A slush generator to scaffold an ECMAScript6-based front-end with a solid developer toolkit and build processes.
 
+Asponte is a play on the Latin *sua sponte* meaning "of one's own volition". This generator is so named because many
+seemingly hard-to-set-up features of your application can be deployed with ease; the generator takes care of a lot
+of heavy lifting.
+
+Applications built with Asponte include:
+  * ECMAScript 6 (with transpiling via 6to5)
+  * Test server (via Express)
+  * Test, Dev and Production builds (via Gulp)
+  * Tests (with Mocha, Karma, Chai, and full ES6 sourcemap support)
+  * Code coverage (via Istanbul, featuring full ES6 sourcemap support)
+  * LiveReload
+
+Additionally, there are a some optional components you may choose to deploy:
+  * Bootstrap (with SASS and LESS)
+  * Bourbon
 
 ## Getting Started
 
@@ -25,12 +40,47 @@ Run the generator from within the new folder:
 $ cd my-slush-asponte && slush asponte
 ```
 
+### Project Layout
+Projects built with Asponte are highly organized, as follows:
+
+<ul>
+  <li>/ (contains README, gulpfile, Express server, and some configuration files.
+    <ul>
+      <li>/build (contains builds)
+        <ul>
+          <li>/dev (contains development build)</li>
+          <li>/production (contains production build)</li>
+          <li>/test (contains test build, for running tests via Karma / Gulp)</li>
+        </ul>
+      <li>/src (contains the index.html of your project)
+        <ul>
+          <li>/js (contains Angular bootstrapping and other JavaScript that has to run before Angular does is ready)</li>
+          <li>/modules (contains a set of Angular modules you create with Asponte or otherwise)
+            <ul>
+	          <li>*module name* (contains an individual module created with Asponte or othwerise)</li>
+	          <li>/controllers (contains controllers and controller tests)</li>
+	          <li>/services (contains services and service tests)</li>
+	          <li>/directives (contains directives and directive tests)</li>
+	          <li>/templates (contains Angular HTML templates)</li>
+	          <li>/scss (contains module-specific SCSS)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>/tasks (contains a set of Gulp tasks, one per file)</li>
+      <li>/test (contains test configuration files, other than the karma.conf.js file, which is at the project root)</li>
+    </ul>
+  </li>
+</ul>
+
 ### Generators
 Asponte includes several generators to help you build your project:
-  * **asponte:** Builds a starter application with AngularJS featuring a number of advantageous features that can be a pain to set up, including build processes in Gulp, ECMAScript transpiling via 6to5, the Karma test runner with Mocha (including full support for ECMAScript 6 sourcemaps), code coverage with Istanbul (also featuring full ECMAScript 6 sourcemap support), SASS with Bourbon, and more.
-  * **module**
-  * **service**
-  * **controller**
+  * **asponte:** Builds a starter application with AngularJS featuring a number of advantageous features that can be a pain to set up.
+  * **module:** Creates a new module in src/modules and creates a -module.js file to declare the Angular module.
+  * **service** Creates a new Angular service in the module of your choice, and sets up some scaffolding for the service and for tests.
+  * **controller** Creates a new Angular controller in the module of your choice, and sets up some scaffolding for the controller and for tests.
+
+
 
 ## Getting To Know Slush
 
