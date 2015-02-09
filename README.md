@@ -91,6 +91,23 @@ To use, run:
 slush asponte
 ```
 
+##### Customizations
+This generator allows you to specify the following parameters:
+  * Project name
+  * Project description
+  * Project version
+  * Author name
+  * Author email
+  * Author github username
+  * License
+
+Additionally, you can choose whether or not you wish to include the following components:
+
+  * [Bootstrap] (http://getbootstrap.com/) with [ui-Bootstrap] (http://angular-ui.github.io/bootstrap/)
+  * [uiRouter] (https://github.com/angular-ui/ui-router)
+  * [uiSelect] (https://github.com/angular-ui/ui-select)
+  * [Bourbon] (http://bourbon.io/)
+
 #### module
 > Creates a new module in src/modules and creates a -module.js file to declare the Angular module.
 
