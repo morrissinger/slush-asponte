@@ -12,7 +12,7 @@ Applications built with Asponte include:
   * Test server (via [Express](http://expressjs.com/))
   * Test, Dev and Production builds (via [Gulp](gulpjs.com))
   * Tests (with [Mocha](mochajs.org), [Karma](http://karma-runner.github.io/), [Chai](http://chaijs.com/), and full ES6 [sourcemap support](https://www.npmjs.com/package/karma-source-map-support))
-  * Code coverage (via [Istanbul](https://github.com/gotwarlost/istanbul), featuring full ES6 [sourcemap](git://github.com/douglasduteil/isparta) [support](https://github.com/Cellarise/istanbul-coverage-source-map))
+  * Code coverage (via [Istanbul](https://github.com/gotwarlost/istanbul) and [Istanbul Custom Reports](https://github.com/Cellarise/gulp-istanbul-custom-reports), featuring full ES6 [sourcemap](git://github.com/douglasduteil/isparta) [support](https://github.com/Cellarise/istanbul-coverage-source-map))
   * LiveReload
 
 Additionally, there are a some optional components you may choose to deploy:
