@@ -7,16 +7,17 @@ seemingly hard-to-set-up features of your application can be deployed with ease;
 of heavy lifting.
 
 Applications built with Asponte include:
-  * ECMAScript 6 (with transpiling via 6to5)
-  * Test server (via Express)
-  * Test, Dev and Production builds (via Gulp)
-  * Tests (with Mocha, Karma, Chai, and full ES6 sourcemap support)
-  * Code coverage (via Istanbul, featuring full ES6 sourcemap support)
+  * [Angular.js](https://angularjs.org/)
+  * ECMAScript 6 (with transpiling via [6to5](https://6to5.org))
+  * Test server (via [Express](http://expressjs.com/))
+  * Test, Dev and Production builds (via [Gulp](gulpjs.com))
+  * Tests (with [Mocha](mochajs.org), [Karma](http://karma-runner.github.io/), [Chai](http://chaijs.com/), and full ES6 [sourcemap support](https://www.npmjs.com/package/karma-source-map-support))
+  * Code coverage (via [Istanbul](https://github.com/gotwarlost/istanbul), featuring full ES6 [sourcemap support](git://github.com/douglasduteil/isparta))
   * LiveReload
 
 Additionally, there are a some optional components you may choose to deploy:
-  * Bootstrap (with SASS and LESS)
-  * Bourbon
+  * [Bootstrap](http://getbootstrap.com/) (with [SASS](sass-lang.com) and [LESS](http://lesscss.org/))
+  * [Bourbon](http://bourbon.io/)
 
 This generator is both opinionated and non-opinionated. It is built with certain assumptions about the best way to
 organize one's Angular.js project. There will naturally be disagreement about this. The good news is that Slush
