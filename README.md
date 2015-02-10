@@ -1,6 +1,6 @@
 # Asponte [![Build Status](https://secure.travis-ci.org/morrissinger/slush-asponte.png?branch=master)](https://travis-ci.org/morrissinger/slush-asponte) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-asponte.png)](http://badges.enytc.com/for/npm/slush-asponte)
 
-> A slush generator to scaffold an ECMAScript6-based front-end with a solid developer toolkit and build processes.
+> A slush generator to scaffold an AngularJS / ECMAScript6-based front-end with a solid developer toolkit and build processes.
 
 Asponte is a play on the Latin *sua sponte* meaning "of one's own volition". This generator is so named because many
 seemingly hard-to-set-up features of your application can be deployed with ease; the generator takes care of a lot
