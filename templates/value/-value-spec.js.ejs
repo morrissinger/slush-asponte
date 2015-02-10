@@ -1,0 +1,24 @@
+describe('<%= moduleNameVar %> module', () => {
+
+	/**
+	 * Add any additional variables you want to declare on the top scope for this test suite.
+	 */
+	var <%= valueNameVar %>;
+
+	beforeEach((done) => {
+
+		/**
+		 * Add any additional test initialization routines to run before each test.
+		 */
+		module('<%= moduleNameVar %>');
+		inject((<%= valueNameVar %>_) => {
+			<%= valueNameVar %> = _<%= valueNameVar %>_;
+			done();
+		});
+	});
+
+	describe('<%= valueNameVar %> value', () => {
+
+	});
+
+});
