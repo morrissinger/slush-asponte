@@ -1,0 +1,16 @@
+/**
+ * <%= filterName %> Filter.
+ */
+(function () {
+
+	let filter = (input = '') => {
+
+		let output = input;
+		return output;
+
+	};
+
+	angular.module('<%= moduleNameVar%>')
+		.filter('<%= filterNameVar %>', filter);
+
+})();

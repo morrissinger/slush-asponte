@@ -188,6 +188,14 @@ slush asponte:value
 ```
 
 #### filter
+> Creates a new Angular filter in the module of your choice, and sets up some scaffolding for the filter and for tests.
+
+This generator adds [filter-name]-filter.js and [filter-name]-filter-spec.js under src/modules/[module-name]/filters. To use, run:
+
+```bash
+slush asponte:filter
+```
+
 #### directive
 #### animation
 

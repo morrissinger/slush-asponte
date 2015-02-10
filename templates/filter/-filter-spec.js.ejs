@@ -1,0 +1,27 @@
+describe('<%= moduleNameVar %> module', () => {
+
+	/**
+	 * Add any additional variables you want to declare on the top scope for this test suite.
+	 */
+	var <%= filterNameVar %>, $httpBackend<% if (injections.list.length > 0) {%>, <%= injections.formatted %><% } %>;
+
+	beforeEach((done) => {
+
+		/**
+		 * Add any additional test initialization routines to run before each test, including any additional dependency injections.
+		 */
+		module('<%= moduleNameVar %>');
+		inject((_$httpBackend_, _<%= filterNameVar %>_<% if (injections.list.length > 0) {%>, <%= injections.underscored %><% } %>) => {
+			$httpBackend = _$httpBackend_;
+			<%= filterNameVar %> = _<%= filterNameVar %>_;<% if (injections.list.length > 0) {%>
+<%= injections.injectorMap %><% } %>
+			trainHttpBackend($httpBackend);
+			done();
+		});
+	});
+
+	describe('<%= filterNameVar %> factory', () => {
+
+	});
+
+});
