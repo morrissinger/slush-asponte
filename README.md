@@ -168,11 +168,26 @@ This generator adds [value-name]-value.js and [value-name]-value-spec.js under s
 slush asponte:value
 ```
 
+#### provider
+> Creates a new Angular provider in the module of your choice, and sets up some scaffolding for the provider and for tests.
+
+This generator adds [provider-name]-provider.js and [provider-name]-provider-spec.js under src/modules/[module-name]/providers. To use, run:
+
+```bash
+slush asponte:provider
+```
+
 #### constant
+> Creates a new Angular constant in the module of your choice, and sets up some scaffolding for the constant and for tests.
+
+This generator adds [constant-name]-constant.js and [constant-name]-constant-spec.js under src/modules/[module-name]/constants. To use, run:
+
+```bash
+slush asponte:value
+```
 
 #### filter
 #### directive
-#### provider
 #### animation
 
 ### Special Recipes

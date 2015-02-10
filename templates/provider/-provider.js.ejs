@@ -1,0 +1,29 @@
+/**
+ * <%= providerName %> Provider.
+ */
+(function () {
+
+	class Service {
+		constructor(<%= injections.formatted %>) {}<% if (methods.list.length > 0) { %>
+		<% _.each(methods.list, function (method) { %>
+		/**
+		 * <%= method %> method.
+		 */
+		<%= method %>() {
+		}
+		<% }) %> <% } %>
+	}
+
+	let Provider = () => {
+
+		this.$get = function <%=providerNameVar%>Factory (<%= injections.formatted %>) {
+
+			return new Service(<%= injections.formatted %>);
+		};
+
+	};
+
+	angular.module('<%= moduleNameVar%>')
+		.factory('<%= providerNameVar %>', Provider);
+
+})();
