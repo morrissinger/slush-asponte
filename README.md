@@ -46,7 +46,7 @@ Run the generator from within the new folder:
 $ cd my-slush-asponte-project && slush asponte
 ```
 
-### Project Layout
+## Project Layout
 Projects built with Asponte are highly organized, as follows:
 
 <ul>
@@ -79,10 +79,10 @@ Projects built with Asponte are highly organized, as follows:
   </li>
 </ul>
 
-### Generators
+## Generators
 Asponte includes several generators to help you build your project.
 
-#### asponte
+### asponte
 > Builds a starter application with AngularJS featuring a number of advantageous features that can be a pain to set up.
 
 This generator adds *src* directory, basis Gulp tasks in the *tasks* directory, basic test configuration in the *test* directory.
@@ -92,7 +92,7 @@ To use, run:
 slush asponte
 ```
 
-##### Customizations
+#### Customizations
 This generator allows you to specify the following parameters:
   * Project name
   * Project description
@@ -109,7 +109,7 @@ Additionally, you can choose whether or not you wish to include the following co
   * [uiSelect] (https://github.com/angular-ui/ui-select)
   * [Bourbon] (http://bourbon.io/)
 
-#### module
+### module
 > Creates a new module in src/modules and creates a -module.js file to declare the Angular module.
 
 This generator adds [module-name] directory under src/modules, and adds [module-name]-module.js in that directory. To use, run:
@@ -118,8 +118,20 @@ This generator adds [module-name] directory under src/modules, and adds [module-
 slush asponte:module
 ```
 
-#### Angular Standard Recipees
-##### service
+### Angular Standard Recipes
+
+Asponte contains generators for all of the standard angular recipes:
+  * animation
+  * constant
+  * controller
+  * directive
+  * factory
+  * filter
+  * provider
+  * service
+  * value
+
+#### service
 > Creates a new Angular service in the module of your choice, and sets up some scaffolding for the service and for tests.
 
 This generator adds [service-name]-service.js and [service-name]-service-spec.js under src/modules/[module-name]/services. To use, run:
@@ -128,7 +140,7 @@ This generator adds [service-name]-service.js and [service-name]-service-spec.js
 slush asponte:service
 ```
 
-##### factory
+#### factory
 > Creates a new Angular factory in the module of your choice, and sets up some scaffolding for the factory and for tests.
 
 This generator adds [factory-name]-factory.js and [factory-name]-factory-spec.js under src/modules/[module-name]/factories. To use, run:
@@ -137,7 +149,7 @@ This generator adds [factory-name]-factory.js and [factory-name]-factory-spec.js
 slush asponte:factory
 ```
 
-##### controller
+#### controller
 > Creates a new Angular controller in the module of your choice, and sets up some scaffolding for the controller and for tests.
 
 This generator adds [controller-name]-controller.js and [controller-name]-controller-spec.js under src/modules/[module-name]/controllers. To use, run:
@@ -146,16 +158,8 @@ This generator adds [controller-name]-controller.js and [controller-name]-contro
 slush asponte:controller
 ```
 
-##### template
-> Creates a new Angular template HTML file in the module of your choice, along with a file for SCSS styles.
 
-This generator adds [template-name]-template.html under src/modules/[module-name]/templates and [template-name]-styles.scss under src/modules/[module-name]/scss. To use, run:
-
-```bash
-slush asponte:template
-```
-
-##### value
+#### value
 > Creates a new Angular value in the module of your choice, and sets up some scaffolding for the value and for tests.
 
 This generator adds [value-name]-value.js and [value-name]-value-spec.js under src/modules/[module-name]/values. To use, run:
@@ -164,23 +168,31 @@ This generator adds [value-name]-value.js and [value-name]-value-spec.js under s
 slush asponte:value
 ```
 
-##### constant
+#### constant
 
-##### filter
-##### directive
-##### provider
-##### animation
+#### filter
+#### directive
+#### provider
+#### animation
 
-#### Special Recipees
+### Special Recipes
 
-In addition to the standard recipees available to Angular, Asponte provides some additional ones. These largely mirror
-the standard recipees (and, in fact, will all call `module.service()`) but are broken out here into special
-recipees in case you want to leverage some additional organization in your project.
+In addition to the standard recipes available to Angular, Asponte provides some additional ones. These largely mirror
+the standard recipes (and, in fact, will all call `module.service()`) but are broken out here into special
+recipes in case you want to leverage some additional organization in your project.
 
-##### interceptor
-##### resource
-##### resolver
+#### template
+> Creates a new Angular template HTML file in the module of your choice, along with a file for SCSS styles.
 
+This generator adds [template-name]-template.html under src/modules/[module-name]/templates and [template-name]-styles.scss under src/modules/[module-name]/scss. To use, run:
+
+```bash
+slush asponte:template
+```
+
+#### interceptor
+#### resource
+#### resolver
 
 ## Getting To Know Slush
 
