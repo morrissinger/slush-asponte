@@ -19,10 +19,10 @@ module.exports = function (gulp, options) {
 	/* Added for production */
 	var pkg = require('../../package.json');
 	var banner = ['/**',
-		' * <%= pkg.name %> - <%= pkg.description %> (Modules)',
-		' * @version v<%= pkg.version %>',
-		' * @link <%= pkg.homepage %>',
-		' * @license <%= pkg.license %>',
+		' * <' + '%= pkg.name %> - <' + '%= pkg.description %> (Modules)',
+		' * @version v<' + '%= pkg.version %>',
+		' * @link <' + '%= pkg.homepage %>',
+		' * @license <' + '%= pkg.license %>',
 		' */',
 		''].join('\n');
 	/* end */

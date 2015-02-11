@@ -106,11 +106,11 @@ module.exports = function (gulp) {
 					return done();
 				}
 				answers.appNameSlug = _.slugify(answers.appName);
-				gulp.src(_.map(['*', '.*'], templatePath))
+				gulp.src(_.map(['*', '.*', '**/*', '**/.*'], templatePath))
 					.pipe(template(answers))
 					.pipe(conflict('./'))
 					.pipe(gulp.dest('./'))
-					//.pipe(install())
+					.pipe(install())
 					.on('end', function () {
 						done();
 					});

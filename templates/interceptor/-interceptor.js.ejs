@@ -1,0 +1,30 @@
+/**
+ * <%= interceptorName %> Interceptor.
+ */
+(function () {
+
+	let Interceptor = (<%= injections.formatted %>) => {
+
+		var interceptor = {
+			request: function(config) {
+				return config;
+			},
+			requestError: function(rejection) {
+				return $q.reject(rejection);
+			},
+			response: function(response) {
+				return response;
+			},
+			responseError: function(rejection) {
+				return $q.reject(rejection);
+			}
+		};
+
+		return interceptor;
+
+	};
+
+	angular.module('<%= moduleNameVar%>')
+		.factory('<%= interceptorNameVar %>', Interceptor);
+
+})();

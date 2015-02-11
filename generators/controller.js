@@ -69,7 +69,7 @@ module.exports = function (gulp) {
 				answers.moduleNameVar = _.camelize(answers.moduleNameSlug);
 
 				answers.controllerNameSlug = _.slugify(answers.controllerName);
-				answers.controllerNameVar = _.camelize(answers.controllerNameSlug)+'Service';
+				answers.controllerNameVar = _.camelize(answers.controllerNameSlug)+'Controller';
 
 				answers.injections = formatters.dependencyInjections(answers.injectionsRaw);
 				answers.methods = formatters.methods(answers.methodsRaw);

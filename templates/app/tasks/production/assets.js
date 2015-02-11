@@ -14,10 +14,10 @@ module.exports = function (gulp, options) {
 
 	var pkg = require('../../package.json');
 	var banner = ['/**',
-		' * <%= pkg.name %> - <%= pkg.description %> (Styles)',
-		' * @version v<%= pkg.version %>',
-		' * @link <%= pkg.homepage %>',
-		' * @license <%= pkg.license %>',
+		' * <' + '%= pkg.name %> - <' + '%= pkg.description %> (Styles)',
+		' * @version v<' + '%= pkg.version %>',
+		' * @link <' + '%= pkg.homepage %>',
+		' * @license <' + '%= pkg.license %>',
 		' */',
 		''].join('\n');
 
