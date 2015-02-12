@@ -25,7 +25,7 @@ module.exports = function (gulp, options) {
 		/**
 		 * Stream fonts through the build process.
 		 */
-		var fontStream = Q.Promise(function(resolve) {
+		var fontStream = Q.promise(function(resolve) {
 			var vendorFonts = mainBowerFiles({filter: ['**/*.eot', '**/*.svg', '**/*.ttf', '**/*.woff']}),
 				applicationFonts = ['src/fonts/*.*'];
 

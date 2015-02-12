@@ -15,7 +15,7 @@ module.exports = function (gulp, options) {
 		/**
 		 * Stream fonts through the build process.
 		 */
-		var fontStream = Q.Promise(function(resolve) {
+		var fontStream = Q.promise(function(resolve) {
 			var vendorFonts = mainBowerFiles({filter: ['**/*.eot', '**/*.svg', '**/*.ttf', '**/*.woff']}),
 				applicationFonts = ['src/fonts/*.*'];
 
@@ -33,7 +33,8 @@ module.exports = function (gulp, options) {
 
 			var scssStream = gulp.src(scss)
 					.pipe(sourcemaps.init())
-					.pipe(sass());
+					.pipe(sass())
+					.pipe(sourcemaps.write()); // We have to write sourcemaps here or else the gulpMerge fails because the Stream is not a destroyableTransform.
 
 			var vendorCssStream = gulp.src(vendorCss)
 					.pipe(order(['**/bootstrap.css', '**/fontawesome.css','vendor/**/*.css']))
