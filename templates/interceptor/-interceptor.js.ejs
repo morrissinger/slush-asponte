@@ -3,28 +3,31 @@
  */
 (function () {
 
-	let Interceptor = (<%= injections.formatted %>) => {
+	let interceptor = (<% if (requestError || responseError) { %>$q<% } %><% if ((injections) && (requestError || responseError)) { %>, <% } %><% if (injections) { %><%= injections.formatted %><% } %>) => {
 
-		var interceptor = {
-			request: function(config) {
-				return config;
-			},
-			requestError: function(rejection) {
-				return $q.reject(rejection);
-			},
-			response: function(response) {
-				return response;
-			},
-			responseError: function(rejection) {
-				return $q.reject(rejection);
-			}
-		};
+		var interceptors = {};<% if (request) { %>
 
-		return interceptor;
+		interceptors.request = function(config) {
+			return config;
+		};<% } %><% if (requestError) { %>
+
+		interceptors.requestError = function(rejection) {
+			return $q.reject(rejection);
+		};<% } %><% if (response) { %>
+
+		interceptors.response = function(response) {
+			return response;
+		};<% } %><% if (responseError) { %>
+
+		interceptors.responseError = function(rejection) {
+			return $q.reject(rejection);
+		};<% } %>
+
+		return interceptors;
 
 	};
 
 	angular.module('<%= moduleNameVar%>')
-		.factory('<%= interceptorNameVar %>', Interceptor);
+		.factory('<%= interceptorNameVar %>', interceptor);
 
 })();

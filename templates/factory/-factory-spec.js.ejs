@@ -1,3 +1,4 @@
+/*jshint -W030 */
 describe('<%= moduleNameVar %> module', () => {
 
 	/**
@@ -20,12 +21,13 @@ describe('<%= moduleNameVar %> module', () => {
 		});
 	});
 
-	afterEach(() => {
+	afterEach((done) => {
 		/**
 		 * Add any additional test cleanup routines to run after each test.
 		 */
 		$httpBackend.verifyNoOutstandingExpectation();
 		$httpBackend.verifyNoOutstandingRequest();
+		done();
 	});
 
 	describe('<%= factoryNameVar %> factory', () => {

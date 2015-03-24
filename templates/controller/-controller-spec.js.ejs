@@ -1,3 +1,4 @@
+/*jshint -W030 */
 describe('<%= moduleNameVar %> module', () => {
 
 	/**
@@ -11,9 +12,9 @@ describe('<%= moduleNameVar %> module', () => {
 		 * Add any additional test initialization routines to run before each test, including any additional dependency injections.
 		 */
 		module('<%= moduleNameVar %>');
-		inject((_$httpBackend_, $controller, <% if (injections.list.length > 0) {%>, <%= injections.underscored %><% } %>) => {
+		inject((_$httpBackend_, $controller<% if (injections.list.length > 0) {%>, <%= injections.underscored %><% } %>) => {
 			$httpBackend = _$httpBackend_;
-			<%= controllerNameVar %> = _<%= controllerNameVar %>_;<% if (injections.list.length > 0) {%>
+			<% if (injections.list.length > 0) {%>
 <%= injections.injectorMap %><% } %>
 
 			<%= controllerNameVar %> = $controller('<%= controllerNameVar %>', {
@@ -29,18 +30,19 @@ describe('<%= moduleNameVar %> module', () => {
 		});
 	});
 
-	afterEach(() => {
+	afterEach((done) => {
+
 		/**
 		 * Add any additional test cleanup routines to run after each test.
 		 */
 		$httpBackend.verifyNoOutstandingExpectation();
 		$httpBackend.verifyNoOutstandingRequest();
+		done();
 	});
 
-	describe('<%= controllerNameVar %> controller', () => {
+	describe('<%= controllerName %> controller', () => {
 
-		<% if (methods.list.length > 0) { %>
-		<% _.each(methods.list, function (method) { %>
+		<% if (methods.list.length > 0) { %><% _.each(methods.list, function (method) { %>
 		describe('<%= method %> method', () => {
 			it('exists', (done) => {
 				expect(<%= controllerNameVar %>.<%= method %>).to.exist;
@@ -48,7 +50,6 @@ describe('<%= moduleNameVar %> module', () => {
 			});
 		});
 		<% }) %> <% } %>
-
 	});
 
 });
