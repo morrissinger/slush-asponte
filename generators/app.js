@@ -11,27 +11,6 @@ module.exports = function (gulp) {
 
 	_.extend(_, require('underscore.string'));
 
-	function format(string) {
-		var username = string.toLowerCase();
-		return username.replace(/\s/g, '');
-	}
-
-	var defaults = (function () {
-		var homeDir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE,
-			workingDirName = process.cwd().split('/').pop().split('\\').pop(),
-			osUserName = homeDir && homeDir.split('/').pop() || 'root',
-			configFile = homeDir + '/.gitconfig',
-			user = {};
-		if (require('fs').existsSync(configFile)) {
-			user = require('iniparser').parseSync(configFile).user;
-		}
-		return {
-			appName: workingDirName,
-			userName: format(user.name) || osUserName,
-			authorEmail: user.email || ''
-		};
-	})();
-
 	var templatePath = function (globPattern) {
 		return __dirname + '/../templates/app/' + globPattern;
 	};
@@ -40,8 +19,7 @@ module.exports = function (gulp) {
 		var prompts = [
 			{
 				name: 'appName',
-				message: 'What is the name of your project?',
-				default: defaults.appName
+				message: 'What is the name of your project?'
 			},
 			{
 				name: 'appDescription',
@@ -58,13 +36,11 @@ module.exports = function (gulp) {
 			},
 			{
 				name: 'authorEmail',
-				message: 'What is the author email?',
-				default: defaults.authorEmail
+				message: 'What is the author email?'
 			},
 			{
 				name: 'userName',
-				message: 'What is the github username?',
-				default: defaults.userName
+				message: 'What is the github username?'
 			},
 			{
 				type: 'list',
